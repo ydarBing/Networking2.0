@@ -2,7 +2,7 @@
 
 #include "NetworkingSystem.h"
 #include "MasterServer.h"
-#include "asteroidsCommon\game\MessageIDs.h"
+//#include "asteroidsCommon\game\MessageIDs.h"
 
 void TCPConnect(s32 id)
 {
@@ -56,8 +56,8 @@ void MasterServer::Run(ThreadSafeQueue<istring>& userIO)
     if(GetTickCount() - m_lastUpdateTime > m_multicastUpdateTime)
     {
       m_lastUpdateTime = GetTickCount();
-      Networking::Message portUpdate = CreateNetMessage(MessageID::Locate, "8010", 4);
-      m_net->Send(portUpdate, MCAST_ID);
+      //Networking::Message portUpdate = CreateNetMessage(MessageID::Locate, "8010", 4);
+      //m_net->Send(portUpdate, MCAST_ID);
     }
 
     if(!userIO.Empty())
@@ -83,44 +83,44 @@ void MasterServer::Receive()
       s32 id;
       c08* buffer = GetIDAndDataFromMessage(m, id);
 
-      switch(id)
-      {
-        case MessageID::Locate:
-        {
-          std::cout << "Locate message recieved from " << m_net->GetConnectionAddress(con) << std::endl;
-          InstanceServer* instance = new InstanceServer(con);
-
-          //all connections are clients to start, remove a client to become instance server
-          auto it = GetClientIt(con);
-          m_clients.erase(it);
-
-          m_instanceServers.push_back(instance);
-          break;
-        }
-        case MessageID::StartNetworkPlay:
-        {
-          RelocateToInstance(con);
-          break;
-        }
-        case MessageID::StartNetworkGameLevel:
-        {
-          auto it = GetInstanceIt(con);
-          (*it)->gameRunning = true;
-
-          break;
-        }
-        case MessageID::NetworkGameEnd:
-        {
-          auto it = GetInstanceIt(con);
-          (*it)->gameRunning = false;
-          
-          break;
-        }
-        default:
-        {
-          std::cout << "Got this message " << id << std::endl;
-        }
-      }//switch
+      //switch(id)
+      //{
+      //  case MessageID::Locate:
+      //  {
+      //    std::cout << "Locate message recieved from " << m_net->GetConnectionAddress(con) << std::endl;
+      //    InstanceServer* instance = new InstanceServer(con);
+      //
+      //    //all connections are clients to start, remove a client to become instance server
+      //    auto it = GetClientIt(con);
+      //    m_clients.erase(it);
+      //
+      //    m_instanceServers.push_back(instance);
+      //    break;
+      //  }
+      //  case MessageID::StartNetworkPlay:
+      //  {
+      //    RelocateToInstance(con);
+      //    break;
+      //  }
+      //  case MessageID::StartNetworkGameLevel:
+      //  {
+      //    auto it = GetInstanceIt(con);
+      //    (*it)->gameRunning = true;
+      //
+      //    break;
+      //  }
+      //  case MessageID::NetworkGameEnd:
+      //  {
+      //    auto it = GetInstanceIt(con);
+      //    (*it)->gameRunning = false;
+      //    
+      //    break;
+      //  }
+      //  default:
+      //  {
+      //    std::cout << "Got this message " << id << std::endl;
+      //  }
+      //}//switch
       delete [] buffer;
     }//while size
   }//ifmessage
@@ -160,8 +160,8 @@ bool MasterServer::HandleCommand(istring& command)
   {
     s32 num = atoi(command.substr(6).c_str());
 
-    Networking::Message portUpdate = CreateNetMessage(MessageID::ServerStartNetworkGameButton, nullptr, 0);
-    m_net->Send(portUpdate, num);
+    //Networking::Message portUpdate = CreateNetMessage(MessageID::ServerStartNetworkGameButton, nullptr, 0);
+    //m_net->Send(portUpdate, num);
 
     std::cout << "Command to start server " << num << std::endl;
   }
@@ -199,32 +199,32 @@ void MasterServer::HandleDisconnect(s32 id)
 
 ////////////////////
 // Private functions
-Networking::Message MasterServer::CreateNetMessage(MessageID::MessageID id, const c08 *data, const u16 buffSize)
-{
-  const u32 idSize = sizeof(MessageID::MessageID);
-  //create a buffer
-  c08 *buffer = new char[idSize + buffSize];
-
-  memcpy(buffer, &id, idSize);
-  memcpy(buffer + idSize, data, buffSize);
-  
-  Networking::Message m(buffer, idSize + buffSize);
-
-  delete [] buffer;
-  return m;
-}
+//Networking::Message MasterServer::CreateNetMessage(MessageID::MessageID id, const c08 *data, const u16 buffSize)
+//{
+//  const u32 idSize = sizeof(MessageID::MessageID);
+//  //create a buffer
+//  c08 *buffer = new char[idSize + buffSize];
+//
+//  memcpy(buffer, &id, idSize);
+//  memcpy(buffer + idSize, data, buffSize);
+//  
+//  Networking::Message m(buffer, idSize + buffSize);
+//
+//  delete [] buffer;
+//  return m;
+//}
 
 c08* MasterServer::GetIDAndDataFromMessage(Networking::Message message, s32& id)
 {
-  const u32 idSize = sizeof(MessageID::MessageID);
+  //const u32 idSize = sizeof(MessageID::MessageID);
+  //
+  //id = *RECAST(MessageID::MessageID*, message.GetBuffer());
+  //
+  //if(message.GetSize() < idSize)
+  //  return nullptr;
 
-  id = *RECAST(MessageID::MessageID*, message.GetBuffer());
-
-  if(message.GetSize() < idSize)
-    return nullptr;
-
-  c08 *buffer = new c08[message.GetSize() - idSize];
-  memcpy(buffer, message.GetBuffer() + idSize, message.GetSize() - idSize);
+  c08 *buffer = new c08[message.GetSize()];// - idSize];
+  memcpy(buffer, message.GetBuffer() /*+ idSize*/, message.GetSize() /*- idSize*/);
   
   return buffer;
 }
@@ -247,9 +247,9 @@ void MasterServer::RelocateToInstance(s32 con)
 
       DPRINT(0, "Relocating client to " << instanceAddr);
       
-      Networking::Message msg = CreateNetMessage(MessageID::Relocate, 
-        buffer.c_str(), buffer.length());
-      m_net->Send(msg, con);
+      //Networking::Message msg = CreateNetMessage(MessageID::Relocate, 
+      //  buffer.c_str(), buffer.length());
+      //m_net->Send(msg, con);
 
       //remove client
       auto it = GetClientIt(con);

@@ -2,7 +2,32 @@
 *.slo
 *.lo
 *.o
+*.orig
+*.exe
+*.suo
+*.sdf
+*.user
+*.ipch
+*.tlog
+*.log
+*.idb
+*.pdb
+*.lastbuildstate
 *.obj
+*.DS_Store
+*.manifest
+*.ilk
+*.user
+*.filters
+*.pch
+*.rc
+*.res
+*.opensdf
+*.unsuccessfulbuild
+*.vcxproj
+*.suo
+*.lib
+*.sln
 
 # Compiled Dynamic libraries
 *.so

@@ -3,7 +3,7 @@
 #include "MasterServer.h"
 #include "Service.h"
 
-#include "asteroidsCommon\ArgumentParser.h"
+#include "ArgumentParser.h"
 
 #include "FileShare\io\ThreadedReader.h"
 #include "FileShare\io\ThreadSafeQueue.h"

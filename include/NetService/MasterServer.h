@@ -1,7 +1,7 @@
 #pragma once
 #include "INetService.h"
 #include "Message.h"
-#include "asteroidsCommon\game\MessageIDs.h"
+//#include "asteroidsCommon\game\MessageIDs.h"
 
 class MasterServer : public INetService
 {
@@ -27,7 +27,7 @@ private:
   typedef std::vector<s32>    ClientVec;
   typedef ClientVec::iterator ClientVecIt;
   
-  Networking::Message CreateNetMessage(MessageID::MessageID id, const c08 *data, const u16 buffSize);
+  //Networking::Message CreateNetMessage(MessageID::MessageID id, const c08 *data, const u16 buffSize);
   c08* GetIDAndDataFromMessage(Networking::Message message, s32& id);
 
   struct InstanceServer
