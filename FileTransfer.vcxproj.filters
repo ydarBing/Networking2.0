@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{46285D98-4A95-124E-82DC-8DD1AB6654A7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\FileShare">
+      <UniqueIdentifier>{614F5259-3DB3-934C-8845-DE7897E52371}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\engine">
+      <UniqueIdentifier>{847348CE-674B-534C-8A7C-B7685573016B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{075D868A-01D0-7E44-A64E-0D358129E793}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\FileShare">
+      <UniqueIdentifier>{09127085-A757-9F4E-8943-F3F1D1902DD6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\FileShare\client">
+      <UniqueIdentifier>{5190BAA9-B0EF-9D45-AB6F-3E22B07E2C39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\FileShare\io">
+      <UniqueIdentifier>{6577A3A2-7B58-DF40-B63F-E6EAAA13CF30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\FileShare\server">
+      <UniqueIdentifier>{5BF644B9-F997-0D40-B92D-4E756F388548}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\FileShare\client">
+      <UniqueIdentifier>{E7B3E0D0-9335-4F4C-A6D4-C27EF8D8E258}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\FileShare\io">
+      <UniqueIdentifier>{B5122D81-6FA3-6148-BDB8-F6E229004945}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\FileShare\server">
+      <UniqueIdentifier>{0D3E9714-8C18-0140-8855-26946737146A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\FileShare\FileReader.h">
+      <Filter>include\FileShare</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CommonDefines.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MainPrecompiled.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\Address.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\ArgumentParser.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\BitPack.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\Connection.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\Encoder.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\IProtocol.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\LockableResource.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\LockableResource_.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\Message.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\NetworkingPrecompiled.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\NetworkingSystem.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\NetworkingSystem_.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\PRNG.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\BitPack.hpp">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FileShare\client\FSClient.h">
+      <Filter>include\FileShare\client</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FileShare\client\FSClientConfigData.h">
+      <Filter>include\FileShare\client</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FileShare\io\ClientConsoleCommands.h">
+      <Filter>include\FileShare\io</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FileShare\io\ConsoleIO.h">
+      <Filter>include\FileShare\io</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FileShare\io\IConsoleCommands.h">
+      <Filter>include\FileShare\io</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FileShare\io\InputParser.h">
+      <Filter>include\FileShare\io</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FileShare\io\ServerConsoleCommands.h">
+      <Filter>include\FileShare\io</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FileShare\io\ThreadedReader.h">
+      <Filter>include\FileShare\io</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FileShare\io\ThreadSafeQueue.h">
+      <Filter>include\FileShare\io</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FileShare\server\FSServer.h">
+      <Filter>include\FileShare\server</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FileShare\server\FSServerConfigData.h">
+      <Filter>include\FileShare\server</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\FileShare\FileReader.cpp">
+      <Filter>src\FileShare</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FileShare\main.cpp">
+      <Filter>src\FileShare</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MainPrecompiled.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FileShare\client\FSClient.cpp">
+      <Filter>src\FileShare\client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FileShare\client\FSClientConfigData.cpp">
+      <Filter>src\FileShare\client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FileShare\io\ClientConsoleCommands.cpp">
+      <Filter>src\FileShare\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FileShare\io\ConsoleIO.cpp">
+      <Filter>src\FileShare\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FileShare\io\IConsoleCommands.cpp">
+      <Filter>src\FileShare\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FileShare\io\InputParser.cpp">
+      <Filter>src\FileShare\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FileShare\io\ServerConsoleCommands.cpp">
+      <Filter>src\FileShare\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FileShare\io\ThreadedReader.cpp">
+      <Filter>src\FileShare\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FileShare\server\FSServer.cpp">
+      <Filter>src\FileShare\server</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FileShare\server\FSServerConfigData.cpp">
+      <Filter>src\FileShare\server</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{857C86F4-6A0A-254F-9F47-059045AA32DB}</ProjectGuid>
+    <RootNamespace>FileTransfer</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>bin\debug\</OutDir>
+    <IntDir>obj\Debug\FileTransfer\</IntDir>
+    <TargetName>FileTransfer</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>bin\release\</OutDir>
+    <IntDir>obj\Release\FileTransfer\</IntDir>
+    <TargetName>FileTransfer</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>include;include\FileShare;include\FileShare\client;include\FileShare\io;include\FileShare\server;include\engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SUBSYSTEM=WINDOWS;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>MainPrecompiled.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(OutDir)FileTransfer.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>SUBSYSTEM=WINDOWS;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;include\FileShare;include\FileShare\client;include\FileShare\io;include\FileShare\server;include\engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)FileTransfer.exe</OutputFile>
+      <AdditionalLibraryDirectories>lib;lib\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>include;include\FileShare;include\FileShare\client;include\FileShare\io;include\FileShare\server;include\engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SUBSYSTEM=WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>MainPrecompiled.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>SUBSYSTEM=WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;include\FileShare;include\FileShare\client;include\FileShare\io;include\FileShare\server;include\engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)FileTransfer.exe</OutputFile>
+      <AdditionalLibraryDirectories>lib;lib\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\FileShare\FileReader.h" />
+    <ClInclude Include="include\CommonDefines.h" />
+    <ClInclude Include="include\MainPrecompiled.h" />
+    <ClInclude Include="include\engine\Address.h" />
+    <ClInclude Include="include\engine\ArgumentParser.h" />
+    <ClInclude Include="include\engine\BitPack.h" />
+    <ClInclude Include="include\engine\Connection.h" />
+    <ClInclude Include="include\engine\Encoder.h" />
+    <ClInclude Include="include\engine\IProtocol.h" />
+    <ClInclude Include="include\engine\LockableResource.h" />
+    <ClInclude Include="include\engine\LockableResource_.h" />
+    <ClInclude Include="include\engine\Message.h" />
+    <ClInclude Include="include\engine\NetworkingPrecompiled.h" />
+    <ClInclude Include="include\engine\NetworkingSystem.h" />
+    <ClInclude Include="include\engine\NetworkingSystem_.h" />
+    <ClInclude Include="include\engine\PRNG.h" />
+    <ClInclude Include="include\engine\BitPack.hpp" />
+    <ClInclude Include="include\FileShare\client\FSClient.h" />
+    <ClInclude Include="include\FileShare\client\FSClientConfigData.h" />
+    <ClInclude Include="include\FileShare\io\ClientConsoleCommands.h" />
+    <ClInclude Include="include\FileShare\io\ConsoleIO.h" />
+    <ClInclude Include="include\FileShare\io\IConsoleCommands.h" />
+    <ClInclude Include="include\FileShare\io\InputParser.h" />
+    <ClInclude Include="include\FileShare\io\ServerConsoleCommands.h" />
+    <ClInclude Include="include\FileShare\io\ThreadedReader.h" />
+    <ClInclude Include="include\FileShare\io\ThreadSafeQueue.h" />
+    <ClInclude Include="include\FileShare\server\FSServer.h" />
+    <ClInclude Include="include\FileShare\server\FSServerConfigData.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\FileShare\FileReader.cpp">
+    </ClCompile>
+    <ClCompile Include="src\FileShare\main.cpp">
+    </ClCompile>
+    <ClCompile Include="src\MainPrecompiled.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\FileShare\client\FSClient.cpp">
+    </ClCompile>
+    <ClCompile Include="src\FileShare\client\FSClientConfigData.cpp">
+    </ClCompile>
+    <ClCompile Include="src\FileShare\io\ClientConsoleCommands.cpp">
+    </ClCompile>
+    <ClCompile Include="src\FileShare\io\ConsoleIO.cpp">
+    </ClCompile>
+    <ClCompile Include="src\FileShare\io\IConsoleCommands.cpp">
+    </ClCompile>
+    <ClCompile Include="src\FileShare\io\InputParser.cpp">
+    </ClCompile>
+    <ClCompile Include="src\FileShare\io\ServerConsoleCommands.cpp">
+    </ClCompile>
+    <ClCompile Include="src\FileShare\io\ThreadedReader.cpp">
+    </ClCompile>
+    <ClCompile Include="src\FileShare\server\FSServer.cpp">
+    </ClCompile>
+    <ClCompile Include="src\FileShare\server\FSServerConfigData.cpp">
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="NetworkLib.vcxproj">
+      <Project>{C180A461-EE7F-2349-8CD1-E3FF16147340}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

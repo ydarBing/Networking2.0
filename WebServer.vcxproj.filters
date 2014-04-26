@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{2CA9F2C4-2E92-AF40-8BB7-2EE6C955198B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\engine">
+      <UniqueIdentifier>{C5839B82-CA87-574B-B3A0-24F0493E1066}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{111921C4-478B-FA4A-B8ED-2A84E4F776BE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\WebServer">
+      <UniqueIdentifier>{1A920BBA-387F-E244-82C7-DA3ADFF34089}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\WebServer\HeaderParsing">
+      <UniqueIdentifier>{A7E3828A-F65F-164F-BC71-FDEB24B862B5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\WebServer">
+      <UniqueIdentifier>{BE3B30B2-BEC2-DF42-BB20-4A341F51958C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\WebServer\HeaderParsing">
+      <UniqueIdentifier>{DAFCA655-C432-1D42-9856-86DB871F03FE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\CommonDefines.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MainPrecompiled.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\Address.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\ArgumentParser.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\BitPack.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\Connection.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\Encoder.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\IProtocol.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\LockableResource.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\LockableResource_.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\Message.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\NetworkingPrecompiled.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\NetworkingSystem.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\NetworkingSystem_.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\PRNG.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\BitPack.hpp">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\WebServer\HTML.h">
+      <Filter>include\WebServer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\WebServer\HTTP.h">
+      <Filter>include\WebServer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\WebServer\Page.h">
+      <Filter>include\WebServer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\WebServer\REST.h">
+      <Filter>include\WebServer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\WebServer\SampleSite.h">
+      <Filter>include\WebServer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\WebServer\Site.h">
+      <Filter>include\WebServer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\WebServer\HeaderParsing\URIParser.h">
+      <Filter>include\WebServer\HeaderParsing</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\MainPrecompiled.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WebServer\HTML.cpp">
+      <Filter>src\WebServer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WebServer\HTTP.cpp">
+      <Filter>src\WebServer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WebServer\main.cpp">
+      <Filter>src\WebServer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WebServer\Page.cpp">
+      <Filter>src\WebServer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WebServer\REST.cpp">
+      <Filter>src\WebServer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WebServer\SampleSite.cpp">
+      <Filter>src\WebServer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WebServer\Site.cpp">
+      <Filter>src\WebServer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WebServer\HeaderParsing\URIParser.cpp">
+      <Filter>src\WebServer\HeaderParsing</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

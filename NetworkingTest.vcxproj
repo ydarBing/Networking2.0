@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8A6DDA53-EA67-A749-BFB5-AB18CB20AAE0}</ProjectGuid>
+    <RootNamespace>NetworkingTest</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>bin\debug\</OutDir>
+    <IntDir>obj\Debug\NetworkingTest\</IntDir>
+    <TargetName>NetworkingTest</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>bin\release\</OutDir>
+    <IntDir>obj\Release\NetworkingTest\</IntDir>
+    <TargetName>NetworkingTest</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>include;include\asteroidsClient;include\asteroidsCommon;include\asteroidsServer;include\engine;include\FileShare;include\NetService;include\WebServer;include\asteroidsCommon\bullet;include\asteroidsCommon\FMOD;include\asteroidsCommon\game;include\asteroidsCommon\SYM;include\asteroidsCommon\VLD;include\asteroidsCommon\WebUI;include\asteroidsCommon\bullet\docs;include\asteroidsCommon\bullet\includes;include\asteroidsCommon\bullet\lib;include\asteroidsCommon\bullet\includes\BulletCollision;include\asteroidsCommon\bullet\includes\BulletDynamics;include\asteroidsCommon\bullet\includes\LinearMath;include\asteroidsCommon\bullet\includes\vectormath;include\asteroidsCommon\bullet\includes\BulletCollision\BroadphaseCollision;include\asteroidsCommon\bullet\includes\BulletCollision\CollisionDispatch;include\asteroidsCommon\bullet\includes\BulletCollision\CollisionShapes;include\asteroidsCommon\bullet\includes\BulletCollision\Gimpact;include\asteroidsCommon\bullet\includes\BulletCollision\NarrowPhaseCollision;include\asteroidsCommon\bullet\includes\BulletDynamics\ConstraintSolver;include\asteroidsCommon\bullet\includes\BulletDynamics\Dynamics;include\asteroidsCommon\bullet\includes\BulletDynamics\Featherstone;include\asteroidsCommon\bullet\includes\BulletDynamics\MLCPSolvers;include\asteroidsCommon\bullet\includes\BulletDynamics\Vehicle;include\asteroidsCommon\bullet\includes\vectormath\neon;include\asteroidsCommon\bullet\includes\vectormath\scalar;include\asteroidsCommon\bullet\includes\vectormath\sse;include\asteroidsCommon\FMOD\inc;include\asteroidsCommon\FMOD\lib;include\asteroidsCommon\SYM\include;include\asteroidsCommon\SYM\lib;include\asteroidsCommon\VLD\bin;include\asteroidsCommon\VLD\include;include\asteroidsCommon\VLD\lib;include\asteroidsCommon\VLD\bin\Win32;include\asteroidsCommon\VLD\bin\Win64;include\asteroidsCommon\VLD\lib\Win32;include\asteroidsCommon\VLD\lib\Win64;include\asteroidsCommon\WebUI\HeaderParsing;include\FileShare\client;include\FileShare\io;include\FileShare\server;include\WebServer\HeaderParsing;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SUBSYSTEM=WINDOWS;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>MainPrecompiled.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(OutDir)NetworkingTest.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>SUBSYSTEM=WINDOWS;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;include\asteroidsClient;include\asteroidsCommon;include\asteroidsServer;include\engine;include\FileShare;include\NetService;include\WebServer;include\asteroidsCommon\bullet;include\asteroidsCommon\FMOD;include\asteroidsCommon\game;include\asteroidsCommon\SYM;include\asteroidsCommon\VLD;include\asteroidsCommon\WebUI;include\asteroidsCommon\bullet\docs;include\asteroidsCommon\bullet\includes;include\asteroidsCommon\bullet\lib;include\asteroidsCommon\bullet\includes\BulletCollision;include\asteroidsCommon\bullet\includes\BulletDynamics;include\asteroidsCommon\bullet\includes\LinearMath;include\asteroidsCommon\bullet\includes\vectormath;include\asteroidsCommon\bullet\includes\BulletCollision\BroadphaseCollision;include\asteroidsCommon\bullet\includes\BulletCollision\CollisionDispatch;include\asteroidsCommon\bullet\includes\BulletCollision\CollisionShapes;include\asteroidsCommon\bullet\includes\BulletCollision\Gimpact;include\asteroidsCommon\bullet\includes\BulletCollision\NarrowPhaseCollision;include\asteroidsCommon\bullet\includes\BulletDynamics\ConstraintSolver;include\asteroidsCommon\bullet\includes\BulletDynamics\Dynamics;include\asteroidsCommon\bullet\includes\BulletDynamics\Featherstone;include\asteroidsCommon\bullet\includes\BulletDynamics\MLCPSolvers;include\asteroidsCommon\bullet\includes\BulletDynamics\Vehicle;include\asteroidsCommon\bullet\includes\vectormath\neon;include\asteroidsCommon\bullet\includes\vectormath\scalar;include\asteroidsCommon\bullet\includes\vectormath\sse;include\asteroidsCommon\FMOD\inc;include\asteroidsCommon\FMOD\lib;include\asteroidsCommon\SYM\include;include\asteroidsCommon\SYM\lib;include\asteroidsCommon\VLD\bin;include\asteroidsCommon\VLD\include;include\asteroidsCommon\VLD\lib;include\asteroidsCommon\VLD\bin\Win32;include\asteroidsCommon\VLD\bin\Win64;include\asteroidsCommon\VLD\lib\Win32;include\asteroidsCommon\VLD\lib\Win64;include\asteroidsCommon\WebUI\HeaderParsing;include\FileShare\client;include\FileShare\io;include\FileShare\server;include\WebServer\HeaderParsing;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)NetworkingTest.exe</OutputFile>
+      <AdditionalLibraryDirectories>lib;lib\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>include;include\asteroidsClient;include\asteroidsCommon;include\asteroidsServer;include\engine;include\FileShare;include\NetService;include\WebServer;include\asteroidsCommon\bullet;include\asteroidsCommon\FMOD;include\asteroidsCommon\game;include\asteroidsCommon\SYM;include\asteroidsCommon\VLD;include\asteroidsCommon\WebUI;include\asteroidsCommon\bullet\docs;include\asteroidsCommon\bullet\includes;include\asteroidsCommon\bullet\lib;include\asteroidsCommon\bullet\includes\BulletCollision;include\asteroidsCommon\bullet\includes\BulletDynamics;include\asteroidsCommon\bullet\includes\LinearMath;include\asteroidsCommon\bullet\includes\vectormath;include\asteroidsCommon\bullet\includes\BulletCollision\BroadphaseCollision;include\asteroidsCommon\bullet\includes\BulletCollision\CollisionDispatch;include\asteroidsCommon\bullet\includes\BulletCollision\CollisionShapes;include\asteroidsCommon\bullet\includes\BulletCollision\Gimpact;include\asteroidsCommon\bullet\includes\BulletCollision\NarrowPhaseCollision;include\asteroidsCommon\bullet\includes\BulletDynamics\ConstraintSolver;include\asteroidsCommon\bullet\includes\BulletDynamics\Dynamics;include\asteroidsCommon\bullet\includes\BulletDynamics\Featherstone;include\asteroidsCommon\bullet\includes\BulletDynamics\MLCPSolvers;include\asteroidsCommon\bullet\includes\BulletDynamics\Vehicle;include\asteroidsCommon\bullet\includes\vectormath\neon;include\asteroidsCommon\bullet\includes\vectormath\scalar;include\asteroidsCommon\bullet\includes\vectormath\sse;include\asteroidsCommon\FMOD\inc;include\asteroidsCommon\FMOD\lib;include\asteroidsCommon\SYM\include;include\asteroidsCommon\SYM\lib;include\asteroidsCommon\VLD\bin;include\asteroidsCommon\VLD\include;include\asteroidsCommon\VLD\lib;include\asteroidsCommon\VLD\bin\Win32;include\asteroidsCommon\VLD\bin\Win64;include\asteroidsCommon\VLD\lib\Win32;include\asteroidsCommon\VLD\lib\Win64;include\asteroidsCommon\WebUI\HeaderParsing;include\FileShare\client;include\FileShare\io;include\FileShare\server;include\WebServer\HeaderParsing;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SUBSYSTEM=WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>MainPrecompiled.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>SUBSYSTEM=WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;include\asteroidsClient;include\asteroidsCommon;include\asteroidsServer;include\engine;include\FileShare;include\NetService;include\WebServer;include\asteroidsCommon\bullet;include\asteroidsCommon\FMOD;include\asteroidsCommon\game;include\asteroidsCommon\SYM;include\asteroidsCommon\VLD;include\asteroidsCommon\WebUI;include\asteroidsCommon\bullet\docs;include\asteroidsCommon\bullet\includes;include\asteroidsCommon\bullet\lib;include\asteroidsCommon\bullet\includes\BulletCollision;include\asteroidsCommon\bullet\includes\BulletDynamics;include\asteroidsCommon\bullet\includes\LinearMath;include\asteroidsCommon\bullet\includes\vectormath;include\asteroidsCommon\bullet\includes\BulletCollision\BroadphaseCollision;include\asteroidsCommon\bullet\includes\BulletCollision\CollisionDispatch;include\asteroidsCommon\bullet\includes\BulletCollision\CollisionShapes;include\asteroidsCommon\bullet\includes\BulletCollision\Gimpact;include\asteroidsCommon\bullet\includes\BulletCollision\NarrowPhaseCollision;include\asteroidsCommon\bullet\includes\BulletDynamics\ConstraintSolver;include\asteroidsCommon\bullet\includes\BulletDynamics\Dynamics;include\asteroidsCommon\bullet\includes\BulletDynamics\Featherstone;include\asteroidsCommon\bullet\includes\BulletDynamics\MLCPSolvers;include\asteroidsCommon\bullet\includes\BulletDynamics\Vehicle;include\asteroidsCommon\bullet\includes\vectormath\neon;include\asteroidsCommon\bullet\includes\vectormath\scalar;include\asteroidsCommon\bullet\includes\vectormath\sse;include\asteroidsCommon\FMOD\inc;include\asteroidsCommon\FMOD\lib;include\asteroidsCommon\SYM\include;include\asteroidsCommon\SYM\lib;include\asteroidsCommon\VLD\bin;include\asteroidsCommon\VLD\include;include\asteroidsCommon\VLD\lib;include\asteroidsCommon\VLD\bin\Win32;include\asteroidsCommon\VLD\bin\Win64;include\asteroidsCommon\VLD\lib\Win32;include\asteroidsCommon\VLD\lib\Win64;include\asteroidsCommon\WebUI\HeaderParsing;include\FileShare\client;include\FileShare\io;include\FileShare\server;include\WebServer\HeaderParsing;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)NetworkingTest.exe</OutputFile>
+      <AdditionalLibraryDirectories>lib;lib\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\CommonDefines.h" />
+    <ClInclude Include="include\MainPrecompiled.h" />
+    <ClInclude Include="include\engine\Address.h" />
+    <ClInclude Include="include\engine\ArgumentParser.h" />
+    <ClInclude Include="include\engine\BitPack.h" />
+    <ClInclude Include="include\engine\Connection.h" />
+    <ClInclude Include="include\engine\Encoder.h" />
+    <ClInclude Include="include\engine\IProtocol.h" />
+    <ClInclude Include="include\engine\LockableResource.h" />
+    <ClInclude Include="include\engine\LockableResource_.h" />
+    <ClInclude Include="include\engine\Message.h" />
+    <ClInclude Include="include\engine\NetworkingPrecompiled.h" />
+    <ClInclude Include="include\engine\NetworkingSystem.h" />
+    <ClInclude Include="include\engine\NetworkingSystem_.h" />
+    <ClInclude Include="include\engine\PRNG.h" />
+    <ClInclude Include="include\engine\BitPack.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\MainPrecompiled.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\NetTest\Main.cpp">
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="NetworkLib.vcxproj">
+      <Project>{C180A461-EE7F-2349-8CD1-E3FF16147340}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

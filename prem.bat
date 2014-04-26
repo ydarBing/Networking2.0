@@ -1,0 +1,1 @@
+premake vs2012

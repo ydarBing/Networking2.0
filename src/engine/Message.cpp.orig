@@ -1,0 +1,182 @@
+/************************************************************************/
+/*
+    File created by Nathan Hitchcock (nathan.hitchcock@digipen.edu)
+    CS261 - Project 1
+    1.29.2014
+    All content copyright DigiPen Institute of Technology
+
+    This file implements the message stuct for the user to interface with
+    a clean buffer system
+*/
+/************************************************************************/
+
+#include "NetworkingPrecompiled.h"
+#include "Message.h"
+#include "Encoder.h"
+
+namespace Networking
+{
+
+  Message::Data::Data(MessageError::MESSEGE_ERROR err, MessagePriority::MESSAGE_PRIORITY priority, u16 size, c08* buffer)
+    : refCount_(1), error_(err), priority_(priority), size_(size), buffer_(buffer)
+  {}
+/************************************************************************/
+/*
+    Defining private functions
+*/
+/************************************************************************/
+  void Message::AttachToData(Data* d)
+  {
+    TODO("Assert d is not null");
+    TODO("Assert data_ is null");
+    data_ = d;
+    ++(data_->refCount_);
+  }
+
+  void Message::DetachFromData(void)
+  {
+    TODO("Assert data_ is null");
+
+    --(data_->refCount_);
+
+    if(data_->refCount_ == 0)
+    {
+      //Clean up the buffer,
+      delete [] data_->buffer_;
+      //Clean up the data structure
+      delete data_;
+    }
+    else if(data_->refCount_ < 0)
+      data_->error_ = MessageError::NEGATIVE_REF_COUNT;
+
+    TODO("Assert ref count is not negative");
+  }
+  
+/************************************************************************/
+/*
+    Defining public functions
+*/
+/************************************************************************/
+  Message::Message()
+    : data_(new Data(MessageError::OK, MessagePriority::LOW, 0, NULL)), flags_(0)
+  {
+    //Not worth checking ret val; End would be imminent
+  }
+
+  Message::Message(MessageError::MESSEGE_ERROR meErr)
+    : data_(new Data(meErr, MessagePriority::LOW, 0, NULL)), flags_(0)
+  {
+    //Not worth checking ret val; End would be imminent
+  }
+
+  Message::Message(std::string str)
+    : data_(new Data(MessageError::OK, MessagePriority::LOW, str.size(), new c08[str.size()])),
+    flags_(0)
+  {
+    //Copy the data over
+    memcpy(data_->buffer_, str.c_str(), str.size());
+  }
+
+  Message::Message(const c08* buffer, u16 size)
+    : data_(new Data(MessageError::OK, MessagePriority::LOW, size, new c08[size])), flags_(0)
+  {
+    memcpy(data_->buffer_, buffer, size);
+  }
+
+  Message::Message(c08* nullTerminatedBuffer)
+    : data_(new Data(MessageError::OK, MessagePriority::LOW, 0, NULL)), flags_(0)
+  {
+    data_->size_ = strlen(nullTerminatedBuffer);
+    memcpy(data_->buffer_, nullTerminatedBuffer, data_->size_);
+  }
+
+  Message::Message(const Message& rhs) : flags_(rhs.flags_), sequenceNum_(rhs.sequenceNum_)
+  {
+    AttachToData(rhs.data_);
+  }
+
+  Message& Message::operator=(const Message& rhs)
+  {
+    DetachFromData();
+    AttachToData(rhs.data_);
+    
+    flags_ = rhs.flags_;
+    sequenceNum_ = rhs.sequenceNum_;
+    return *this;
+  }
+
+  Message::~Message()
+  {
+    DetachFromData();
+  }
+
+  void Message::SetPriority(MessagePriority::MESSAGE_PRIORITY priority)
+  {
+    data_->priority_ = priority;
+  }
+
+  MessagePriority::MESSAGE_PRIORITY Message::GetPriority()
+  {
+    return data_->priority_;
+  }
+
+  void Message::SetFlags(MessageFlags flags)
+  {
+    flags_ = flags;
+  }
+
+  u08 Message::GetFlags()
+  {
+    return flags_;
+  }
+
+  void Message::SetSequence(u32 num)
+  {
+    sequenceNum_ = num;
+  }
+
+  u32 Message::GetSequence()
+  {
+    return sequenceNum_;
+  }
+
+  u16 Message::GetSize(void)
+  {
+    return data_->size_;
+  }
+
+  c08* Message::GetBuffer(void)
+  {
+    return data_->buffer_;
+  }
+
+  u16 Message::GetSendSize(void)
+  {
+    return data_->size_ + MESSAGE_HEADER_SIZE;
+  }
+
+  u08* Message::GetSendBuffer(void)
+  {
+    u08* buff = new u08[data_->size_ + MESSAGE_HEADER_SIZE];
+    Encoder encode(false, buff, data_->size_ + MESSAGE_HEADER_SIZE);
+    encode.Write(flags_, SCAST(u08, 0), SCAST(u08, BW_3));
+    encode.Write(data_->size_); TODO("Size Limit");
+    encode.WriteData(data_->buffer_, data_->size_);
+    return buff;
+  }
+
+  MessageError::MESSEGE_ERROR Message::GetError(void)
+  {
+    return data_->error_;
+  }
+
+  bool Message::operator<(const Message& rhs) const
+  {
+    return sequenceNum_ < rhs.sequenceNum_;
+  }
+
+  bool Message::operator>(const Message& rhs) const
+  {
+    return sequenceNum_ > rhs.sequenceNum_;
+  }
+};

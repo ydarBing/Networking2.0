@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{584FE124-8AB0-6B44-BDB1-6DB31148E096}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\engine">
+      <UniqueIdentifier>{416DFD24-B849-8B46-BC8D-F520291032E3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{471DED1A-CA10-104E-9920-2E28AEE9D7C1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\FileShare">
+      <UniqueIdentifier>{A2EEC59F-B2F2-B747-AE18-063193B21DC4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\FileShare\io">
+      <UniqueIdentifier>{47A9737A-625C-0A4A-9DBA-2959578325E5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\FileShare">
+      <UniqueIdentifier>{3832671E-2380-9344-A159-F0434BEA0818}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\FileShare\io">
+      <UniqueIdentifier>{C5033D5D-3A80-E44A-B9C0-7892B9ED54FD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\NetService">
+      <UniqueIdentifier>{0149194C-04B8-A04D-92A8-F9871441A5D6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\NetService">
+      <UniqueIdentifier>{487C94FD-5BBF-E94B-BFFC-DA807E9A5A1D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\CommonDefines.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MainPrecompiled.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\Address.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\ArgumentParser.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\BitPack.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\Connection.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\Encoder.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\IProtocol.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\LockableResource.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\LockableResource_.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\Message.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\NetworkingPrecompiled.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\NetworkingSystem.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\NetworkingSystem_.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\PRNG.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\BitPack.hpp">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FileShare\io\ThreadedReader.h">
+      <Filter>include\FileShare\io</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FileShare\io\ThreadedSafeQueue.h">
+      <Filter>include\FileShare\io</Filter>
+    </ClInclude>
+    <ClInclude Include="include\NetService\INetService.h">
+      <Filter>include\NetService</Filter>
+    </ClInclude>
+    <ClInclude Include="include\NetService\MasterServer.h">
+      <Filter>include\NetService</Filter>
+    </ClInclude>
+    <ClInclude Include="include\NetService\Service.h">
+      <Filter>include\NetService</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\MainPrecompiled.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FileShare\io\ThreadedReader.cpp">
+      <Filter>src\FileShare\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetService\Main.cpp">
+      <Filter>src\NetService</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetService\MasterServer.cpp">
+      <Filter>src\NetService</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetService\Service.cpp">
+      <Filter>src\NetService</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
